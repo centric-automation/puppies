@@ -1,5 +1,5 @@
 # Getting Started
-
+This is site is for use with the book "Cucumber and Cheese" [cucumber_and_cheese.pdf](cucumber_and_cheese.pdf)
 1. Install Ruby from 
 
    - https://github.com/oneclick/rubyinstaller2/releases
