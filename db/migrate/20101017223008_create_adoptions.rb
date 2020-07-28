@@ -1,4 +1,4 @@
-class CreateAdoptions < ActiveRecord::Migration
+class CreateAdoptions < ActiveRecord::Migration[5.2]
   def self.up
     create_table :adoptions do |t|
       t.integer :puppy_id

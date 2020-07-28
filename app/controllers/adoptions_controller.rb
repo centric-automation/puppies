@@ -1,5 +1,5 @@
 class AdoptionsController < ApplicationController
-  skip_before_filter :authorize
+  skip_before_action :authorize
   
   # GET /adoptions
   def index

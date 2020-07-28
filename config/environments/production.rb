@@ -55,4 +55,7 @@ Puppies::Application.configure do
 
   # Generate digests for assets URLs
   config.assets.digest = true
+
+  # 2020 Update
+  config.eager_load = true
 end

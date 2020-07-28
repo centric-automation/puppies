@@ -1,4 +1,4 @@
-class CreatePuppies < ActiveRecord::Migration
+class CreatePuppies < ActiveRecord::Migration[5.2]
   def self.up
     create_table :puppies do |t|
       t.string :name

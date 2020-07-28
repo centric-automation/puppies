@@ -1,4 +1,4 @@
-class CombilneItemsInCart < ActiveRecord::Migration
+class CombilneItemsInCart < ActiveRecord::Migration[5.2]
   def self.up
     Cart.all.each do |cart|
       sums = cart.adoptions.group(:puppy_id).sum(:quantity)

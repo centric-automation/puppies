@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_filter :authorize
+  before_action :authorize
   protect_from_forgery
 
   private

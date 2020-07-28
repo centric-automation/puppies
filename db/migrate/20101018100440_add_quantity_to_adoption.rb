@@ -1,4 +1,4 @@
-class AddQuantityToAdoption < ActiveRecord::Migration
+class AddQuantityToAdoption < ActiveRecord::Migration[5.2]
   def self.up
     add_column :adoptions, :quantity, :integer, :default => 1
   end

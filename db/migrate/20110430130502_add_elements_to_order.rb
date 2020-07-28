@@ -1,4 +1,4 @@
-class AddElementsToOrder < ActiveRecord::Migration
+class AddElementsToOrder < ActiveRecord::Migration[5.2]
   def self.up
     add_column :orders, :has_children, :boolean
     add_column :orders, :has_other_pets, :boolean

@@ -1,9 +1,8 @@
 class OrdersController < ApplicationController
-  skip_before_filter :authorize, :only => [:new, :create]
+  skip_before_action :authorize, :only => [:new, :create]
 
   def index
-    @orders = Order.paginate :page=>params[:page], :order=>'created_at desc',
-    :per_page => 10
+    @orders = Order.order(order: 'created_at desc').paginate(page: params[:page], per_page: 10)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -38,7 +37,8 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new(params[:order])
+    # @order = Order.new(params[:order])
+    @order = Order.new(order_params)
     @order.add_adoptions_from_cart(current_cart)
 
     respond_to do |format|
@@ -74,5 +74,11 @@ class OrdersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(orders_url, :notice => "Please thank #{@order.name} for the order!") }
     end
+  end
+
+  private
+
+  public def order_params
+    params.require(:order).permit(:id, :commit, :order, :name, :address, :email, :pay_type)
   end
 end

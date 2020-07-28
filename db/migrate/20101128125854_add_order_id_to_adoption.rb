@@ -1,4 +1,4 @@
-class AddOrderIdToAdoption < ActiveRecord::Migration
+class AddOrderIdToAdoption < ActiveRecord::Migration[5.2]
   def self.up
     add_column :adoptions, :order_id, :integer
   end

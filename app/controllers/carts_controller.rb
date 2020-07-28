@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  skip_before_filter :authorize, :only => [:show, :create, :update, :destroy]
+  skip_before_action :authorize, :only => [:show, :create, :update, :destroy]
   
   def index
     @carts = Cart.all
